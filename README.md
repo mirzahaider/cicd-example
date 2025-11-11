@@ -57,7 +57,8 @@ Ensure secrets are properly configured.
 2. In your new AWS account, create an S3 bucket and DynamoDB table to store Terraform’s remote state file
     * You can use the file `infra/remote-be/main.tf` to do this. Just give unique values to `bucket_name` & `dynamodb_table_name` variables.
     * In the app’s main infrastructure file, which is `infra/main.tf`, specify the bucket name and dynamodb_table name in the backend block (make sure you replace the `bucket` & `dynamodb_table` with the actual resource names you created in previous step):
-    ![remote-be](https://github.com/user-attachments/assets/3ae4f54d-8aa9-41a7-beeb-20f3894847ab)
+         <img width="450" height="240" alt="remote-be" src="https://github.com/user-attachments/assets/751c3cc3-8669-46be-9314-090bbb281073" />
+
     * Push your changes of `infra/main.tf` to the main branch. The push to the main branch will trigger the CI/CD pipeline. Since new AWS account credentials have already been provided in github secrets, the CI/CD pipeline will set up the infrastructure in this AWS account and will deploy the app there.
 
 
